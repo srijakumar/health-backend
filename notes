@@ -1,0 +1,9 @@
+Tracker (health, sleep, diet)
+has_many :notes
+
+attributes - :title - string, :description - string
+
+
+Note (content)
+belongs_to :tracker
+:tracker_id - integer, :content - string, :date - datetime
