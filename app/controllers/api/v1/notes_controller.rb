@@ -10,7 +10,7 @@ before_action :set_tracker
   def create
     @note = @tracker.note.new(note_params)
     if @note.save
-      render json: @note
+      render json: @tracker
     else
       render json: {error: "Error Saving"}
     end
