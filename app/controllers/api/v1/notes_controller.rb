@@ -23,15 +23,18 @@ before_action :set_tracker
   end
 
   def destroy
-    @note = Note.find(params[:id])
+    # @note = Note.find(params[:id])
+    @note = Note.find(params["id"])
     @note.destroy
+    @tracker = Tracker.find(note.tracker_id)
+    render json: tracker
   end
 
 
   private
 
   def set_tracker
-    @tracker = Tracker.notes.find(params[:tracker_id])
+    @tracker = Tracker.find(params[:tracker_id])
   end
 
   def note_params

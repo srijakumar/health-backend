@@ -24,6 +24,14 @@ class Api::V1::TrackersController < ApplicationController
     @tracker.destroy
   end
 
+  def update
+    @tracker = Tracker.find(params[:id])
+    @tracker.update(name: params["tracker"]["name"])
+    @tracker.update(description: params["tracker"]["description"])
+    @tracker.save
+    render json: @tracker
+  end
+
 
   private
 
