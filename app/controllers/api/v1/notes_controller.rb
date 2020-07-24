@@ -9,8 +9,7 @@ before_action :set_tracker
 
   def create
     @note = @tracker.notes.create(note_params)
-    byebug
-    if @note.save
+      if @note.save
       render json: @tracker
     else
       render json: {error: "Error Saving"}
