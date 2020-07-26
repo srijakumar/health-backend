@@ -9,6 +9,7 @@ before_action :set_tracker
 
   def create
     @note = @tracker.notes.create(note_params)
+
       if @note.save
       render json: @tracker
     else
@@ -26,8 +27,8 @@ before_action :set_tracker
     # @note = Note.find(params[:id])
     @note = Note.find(params["id"])
     @note.destroy
-    @tracker = Tracker.find(note.tracker_id)
-    render json: tracker
+    @tracker = Tracker.find(@note.tracker_id)
+    render json: @tracker
   end
 
 
