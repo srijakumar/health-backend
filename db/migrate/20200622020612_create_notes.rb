@@ -3,7 +3,7 @@ class CreateNotes < ActiveRecord::Migration[6.0]
     create_table :notes do |t|
       t.integer :tracker_id
       t.string :content
-      t.datetime :date
+      t.date :date
 
       t.timestamps
     end

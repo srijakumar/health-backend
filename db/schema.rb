@@ -15,7 +15,7 @@ ActiveRecord::Schema.define(version: 2020_06_22_020612) do
   create_table "notes", force: :cascade do |t|
     t.integer "tracker_id"
     t.string "content"
-    t.datetime "date"
+    t.date "date"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
