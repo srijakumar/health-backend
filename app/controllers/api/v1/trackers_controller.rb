@@ -2,9 +2,12 @@ class Api::V1::TrackersController < ApplicationController
 
   def index
     @trackers = Tracker.all
-    @top_tracker = Tracker.most_notes(self)
-    byebug
     render json: @trackers
+  end
+
+  def most_notes
+    @top_tracker = Tracker.most_notes(self)
+    render json: @top_tracker
   end
 
   def create

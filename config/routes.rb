@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   namespace :api do
       namespace :v1 do
           resources :trackers do
+            get 'most_notes', :to => 'trackers#most_notes'
             resources :notes
           end
         end
