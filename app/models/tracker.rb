@@ -5,7 +5,7 @@ class Tracker < ApplicationRecord
 
 
   scope :most_notes, -> (tracker) {
-    #binding.pry
+  
     joins(:notes)
     .group("notes.tracker_id")
     .order("count(notes.tracker_id) desc").first
